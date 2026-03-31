@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col gap-[4rem]">
+    <h1 class="text-xl text-center pt-[2rem]">Device Preview</h1>
     <div v-if="mobileImages.length || mobileVideos.length" class="flex gap-x-[2rem] justify-center items-center">
       <MediaContainer v-for="(video, index) in mobileVideos" :key="`mobile-video-${index}`" :video="video"
         :index="index" type="mobile" />
