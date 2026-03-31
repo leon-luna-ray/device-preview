@@ -5,13 +5,13 @@
             <div class="relative flex flex-col gap-y-[1rem]">
                 <!-- Screen -->
                 <div
-                    class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-t-2xl shadow-2xl overflow-hidden border-b-8 border-gray-900">
+                    class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-t-2xl shadow-2xl overflow-hidden border-b-8 border-black">
                     <!-- Bezel -->
-                    <div class="bg-gray-900 px-6 py-5">
+                    <div class="bg-black px-6 py-5">
                         <div class="bg-white rounded-lg overflow-hidden shadow-inner relative"
                             :style="{ aspectRatio: '16/10' }">
                             <div
-                                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-900 z-10 rounded-b-lg">
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-black z-10 rounded-b-lg">
                             </div>
 
                             <div class="flex flex-col h-full">
