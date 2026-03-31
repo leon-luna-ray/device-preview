@@ -1,4 +1,5 @@
 name = "device-preview"
+compatibility_date = "2026-03-31"
 type = "javascript"
 account_id = ""
 workers_dev = true
@@ -16,7 +17,6 @@ main = "./dist/index.js"
 [build.upload]
 format = "modules"
 main = "./dist/index.js"
-compatibility_date = "2026-03-31"
 
 [assets]
 directory = "./dist"
