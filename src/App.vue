@@ -23,5 +23,5 @@ import MediaContainer from '@/components/MediaContainer.vue'
 const mobileImages = ['/waging-peace-m-2.png', '/waging-peace-m-3.png']
 const mobileVideos = ['/waging-peace-v-m.webm']
 const desktopImages = ['/waging-peace-d-2.png']
-const desktopVideos = ['/waging-peace-v.webm']
+const desktopVideos = ['/waging-peace-d.webm']
 </script>
