@@ -1,13 +1,13 @@
 <template>
     <component :is="wrapper" :media-type="mediaType" :scroll-offset="scrollOffset" :scroll-bar-height="scrollbarHeight"
         :scroll-bar-position="scrollbarPosition" :max-scroll-distance="maxScrollDistance" :current-time="currentTime"
-        @screen-container="(ref) => screenContainer = ref">
+        @screen-container="(ref) => screenContainer = ref" :caption="media.caption">
         <!-- Image with scrolling -->
         <div v-if="mediaType === 'image'" class="media-content" :style="{ transform: `translateY(${scrollOffset}px)` }">
-            <img ref="imageElement" :src="media" class="media-image">
+            <img ref="imageElement" :src="media.src" class="media-image">
         </div>
         <!-- Video filling container -->
-        <video v-else ref="videoElement" :src="media" class="media-video" autoplay muted loop></video>
+        <video v-else ref="videoElement" :src="media.src" class="media-video" autoplay muted loop></video>
     </component>
 </template>
 
@@ -188,9 +188,6 @@ onUnmounted(() => {
         cancelAnimationFrame(animationInterval.value)
     }
 })
-
-// Expose for parent access if needed
-defineExpose({})
 </script>
 
 <style scoped>

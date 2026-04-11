@@ -10,20 +10,16 @@
                     <div class="bg-black px-6 py-5">
                         <div class="bg-white rounded-lg overflow-hidden shadow-inner relative"
                             :style="{ aspectRatio: '16/10' }">
-                            <div
-                                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-black z-10 rounded-b-lg">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-black z-10 rounded-b-lg">
                             </div>
 
                             <div class="flex flex-col h-full">
                                 <div
-                                    class="h-12 bg-gray-50 flex items-center justify-between px-6 border-b border-gray-200 gap-4 flex-shrink-0">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                                        <span class="text-sm font-medium text-gray-700">127.0.0.1:3000</span>
-                                    </div>
+                                    class="h-12 bg-gray-50 flex items-center justify-end px-6 border-b border-gray-200 gap-4">
+                                    <!-- <div aria-hidden="true"> -->
+                                    <!-- </div> -->
                                     <div class="flex items-center gap-2 text-lg">
                                         <span class="text-xs font-mono text-gray-500">{{ currentTime }}</span>
-                                        <div class="w-4 h-4 rounded bg-gray-300"></div>
                                     </div>
                                 </div>
                                 <div ref="screenContainer" class="flex-1 overflow-hidden relative bg-white">
@@ -40,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center capitalize">{{ mediaType === 'image' ? 'Screenshot' : 'Screen Recording' }}</p>
+                <p v-if="caption" class="text-center capitalize">{{ caption }}</p>
             </div>
         </div>
     </div>
@@ -50,6 +46,10 @@
 import { useTemplateRef, onMounted } from 'vue'
 
 defineProps({
+    caption: {
+        type: String,
+        required: false
+    },
     mediaType: {
         type: String,
         required: true

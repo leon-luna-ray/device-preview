@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-col gap-[4rem]">
     <h1 class="text-xl text-center pt-[2rem]">Device Preview</h1>
-    <div v-if="mobileImages.length || mobileVideos.length" class="flex gap-x-[2rem] justify-center items-center">
+    <div v-if="mobileImages.length || mobileVideos.length"
+      class="flex max-lg:flex-col gap-x-[2rem] justify-center items-center">
       <MediaContainer v-for="(video, index) in mobileVideos" :key="`mobile-video-${index}`" :video="video"
         :index="index" type="mobile" />
       <MediaContainer v-for="(image, index) in mobileImages" :key="`mobile-image-${index}`" :image="image"
@@ -20,8 +21,27 @@
 <script setup>
 import MediaContainer from '@/components/MediaContainer.vue'
 
-const mobileImages = ['/waging-peace-m-2.png', '/waging-peace-m-3.png']
-const mobileVideos = ['/waging-peace-v-m.webm']
-const desktopImages = ['/waging-peace-d-2.png']
-const desktopVideos = ['/waging-peace-d.webm']
+const mobileImages = [{
+  src: '/waging-peace-m-2.png',
+  caption: 'Story Index (screenshot)'
+},
+{
+  src: '/waging-peace-m-3.png',
+  caption: 'About (screenshot)'
+}];
+
+const mobileVideos = [{
+  src: '/waging-peace-v-m.webm',
+  caption: 'Intro and Explore (recording)'
+}];
+
+const desktopImages = [{
+  src: '/waging-peace-d-2.png',
+  caption: 'Get Involved (screenshot)'
+}];
+
+const desktopVideos = [{
+  src: '/waging-peace-d.webm',
+  caption: 'Intro and Explore (recording)'
+}]
 </script>

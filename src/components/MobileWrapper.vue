@@ -10,7 +10,6 @@
                     <div
                         class="h-8 bg-gray-100 flex items-center justify-between px-3 text-xs font-semibold text-black border-b border-gray-200">
                         <span>{{ currentTime }}</span>
-                        <div class="flex gap-1 text-xs">📶 📡 🔋</div>
                     </div>
                     <!-- Screen Content -->
                     <div ref="screenContainer" class="flex-1 overflow-hidden relative">
@@ -18,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center capitalize">{{ mediaType === 'image' ? 'Screenshot' : 'Screen Recording' }}</p>
+            <p v-if="caption" class="text-center capitalize">{{ caption }}</p>
         </div>
     </div>
 </template>
@@ -27,6 +26,10 @@
 import { ref, useTemplateRef, onMounted } from 'vue'
 
 defineProps({
+    caption: {
+        type: String,
+        required: false
+    },
     mediaType: {
         type: String,
         required: true
